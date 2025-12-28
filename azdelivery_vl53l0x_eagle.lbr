@@ -6,7 +6,6 @@
       <setting alwaysvectorfont="yes"/>
       <setting verticaltext="up"/>
     </settings>
-
     <library>
       <description>
 AZ-Delivery VL53L0X Time-of-Flight (ToF) Distance Sensor Module
