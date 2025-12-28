@@ -8,3 +8,5 @@ This repository may include:
 - EAGLE CAD libraries
 - Raspberry Pi hardware projects
 - PCB designs and prototypes
+## License
+MIT License
