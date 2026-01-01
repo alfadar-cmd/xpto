@@ -1,0 +1,50 @@
+# Raspberry Pi 5 – Power & USB Current Management
+
+This repository documents how power and USB current management work on the Raspberry Pi 5,
+based strictly on official Raspberry Pi documentation and best practices.
+
+It provides both a practical tutorial and technical background on:
+- Avoiding undervoltage warnings
+- Enabling maximum USB current safely
+- Monitoring power and throttling states
+- Understanding EEPROM power policies
+
+⚠️ No undocumented or unsafe power-forcing methods are used.
+
+---
+
+## Overview
+
+The Raspberry Pi 5 introduces a stricter and more advanced power management system compared
+to previous models. Power delivery is negotiated via USB-C Power Delivery (PD), and firmware
+dynamically manages current distribution between:
+
+- CPU / GPU
+- USB ports
+- Connected peripherals
+
+If the power supply does not correctly negotiate the expected PD profile, the system may:
+- Limit USB port current
+- Display undervoltage warnings
+- Trigger throttling events
+
+---
+
+## Recommended Power Supply
+
+- 5 V ⎓ 5 A (25–27 W)
+- USB-C Power Delivery compliant
+- USB-C cable rated for 5 A
+
+The official Raspberry Pi power supply is strongly recommended.
+
+---
+
+## Quick Start
+
+Enable maximum USB current (when the power supply allows it).
+
+Edit configuration file:
+
+```bash
+sudo nano /boot/firmware/config.txt
