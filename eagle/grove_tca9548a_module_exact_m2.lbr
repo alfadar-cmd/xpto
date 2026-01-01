@@ -11,8 +11,7 @@
       <description>
 Grove - 8 Channel I2C Multiplexer / I2C Hub (TCA9548A)
 Module footprint (board outline 82x22mm) + mounting holes M2 (Ø2.0mm) + keepout
-Holes extracted from Seeed scale image (top-left, bottom-left, top-middle, bottom-middle, right-side).
-Includes: symbol + package + device (no electrical pads on footprint).
+Includes: symbol + package + device (uses tiny dummy pads for valid EAGLE connects).
       </description>
 
       <packages>
@@ -20,6 +19,7 @@ Includes: symbol + package + device (no electrical pads on footprint).
           <description>
 Module outline 82x22mm, 5x mounting holes Ø2.0mm (M2), keepout.
 Origin at board centre (0,0).
+Dummy pads are placed outside the board outline for EAGLE connectivity.
           </description>
 
           <!-- Board outline (silk) -->
@@ -35,12 +35,36 @@ Origin at board centre (0,0).
           <wire x1="-41" y1="11" x2="-41" y2="-11" width="0.127" layer="39"/>
 
           <!-- Mounting holes (NPTH) Ø2.0mm (M2) -->
-          <!-- Coordinates in mm, origin at board centre -->
-          <hole x="-31.10" y="9.34" drill="2.0"/>   <!-- top-left -->
-          <hole x="-31.41" y="-10.93" drill="2.0"/> <!-- bottom-left -->
-          <hole x="9.14"  y="9.19" drill="2.0"/>    <!-- top-middle -->
-          <hole x="9.14"  y="-11.08" drill="2.0"/>  <!-- bottom-middle -->
-          <hole x="39.08" y="-1.10" drill="2.0"/>   <!-- right-side -->
+          <hole x="-31.10" y="9.34" drill="2.0"/>
+          <hole x="-31.41" y="-10.93" drill="2.0"/>
+          <hole x="9.14"  y="9.19" drill="2.0"/>
+          <hole x="9.14"  y="-11.08" drill="2.0"/>
+          <hole x="39.08" y="-1.10" drill="2.0"/>
+
+          <!-- Dummy pads (very small) placed OUTSIDE the outline (x=45mm) -->
+          <!-- These make the device valid in EAGLE; they are not meant to be connected/used. -->
+          <smd name="P_VCC"   x="45" y="20" dx="0.5" dy="0.5" layer="1"/>
+          <smd name="P_GND"   x="45" y="19" dx="0.5" dy="0.5" layer="1"/>
+          <smd name="P_SCLIN" x="45" y="18" dx="0.5" dy="0.5" layer="1"/>
+          <smd name="P_SDAIN" x="45" y="17" dx="0.5" dy="0.5" layer="1"/>
+          <smd name="P_RST"   x="45" y="16" dx="0.5" dy="0.5" layer="1"/>
+
+          <smd name="P_SC0" x="45" y="14" dx="0.5" dy="0.5" layer="1"/>
+          <smd name="P_SD0" x="45" y="13" dx="0.5" dy="0.5" layer="1"/>
+          <smd name="P_SC1" x="45" y="12" dx="0.5" dy="0.5" layer="1"/>
+          <smd name="P_SD1" x="45" y="11" dx="0.5" dy="0.5" layer="1"/>
+          <smd name="P_SC2" x="45" y="10" dx="0.5" dy="0.5" layer="1"/>
+          <smd name="P_SD2" x="45" y="9"  dx="0.5" dy="0.5" layer="1"/>
+          <smd name="P_SC3" x="45" y="8"  dx="0.5" dy="0.5" layer="1"/>
+          <smd name="P_SD3" x="45" y="7"  dx="0.5" dy="0.5" layer="1"/>
+          <smd name="P_SC4" x="45" y="6"  dx="0.5" dy="0.5" layer="1"/>
+          <smd name="P_SD4" x="45" y="5"  dx="0.5" dy="0.5" layer="1"/>
+          <smd name="P_SC5" x="45" y="4"  dx="0.5" dy="0.5" layer="1"/>
+          <smd name="P_SD5" x="45" y="3"  dx="0.5" dy="0.5" layer="1"/>
+          <smd name="P_SC6" x="45" y="2"  dx="0.5" dy="0.5" layer="1"/>
+          <smd name="P_SD6" x="45" y="1"  dx="0.5" dy="0.5" layer="1"/>
+          <smd name="P_SC7" x="45" y="0"  dx="0.5" dy="0.5" layer="1"/>
+          <smd name="P_SD7" x="45" y="-1" dx="0.5" dy="0.5" layer="1"/>
 
           <text x="-41" y="13" size="1.27" layer="25">&gt;NAME</text>
           <text x="-41" y="-14.5" size="1.27" layer="27">&gt;VALUE</text>
@@ -94,7 +118,7 @@ Channels: SC0/SD0 ... SC7/SD7
         <deviceset name="GROVE_TCA9548A_MODULE_M2" prefix="U">
           <description>
 Grove TCA9548A 8CH I2C Hub module with PCB footprint (82x22mm) and M2 holes.
-Footprint has no electrical pads (module connectors are on the module itself).
+Footprint uses tiny dummy pads (outside outline) only to satisfy EAGLE connects.
           </description>
 
           <gates>
@@ -104,27 +128,28 @@ Footprint has no electrical pads (module connectors are on the module itself).
           <devices>
             <device name="" package="GROVE_TCA9548A_MODULE_82X22_M2_5H">
               <connects>
-                <connect gate="G$1" pin="VCC" pad=""/>
-                <connect gate="G$1" pin="GND" pad=""/>
-                <connect gate="G$1" pin="SCL_IN" pad=""/>
-                <connect gate="G$1" pin="SDA_IN" pad=""/>
-                <connect gate="G$1" pin="RST" pad=""/>
-                <connect gate="G$1" pin="SC0" pad=""/>
-                <connect gate="G$1" pin="SD0" pad=""/>
-                <connect gate="G$1" pin="SC1" pad=""/>
-                <connect gate="G$1" pin="SD1" pad=""/>
-                <connect gate="G$1" pin="SC2" pad=""/>
-                <connect gate="G$1" pin="SD2" pad=""/>
-                <connect gate="G$1" pin="SC3" pad=""/>
-                <connect gate="G$1" pin="SD3" pad=""/>
-                <connect gate="G$1" pin="SC4" pad=""/>
-                <connect gate="G$1" pin="SD4" pad=""/>
-                <connect gate="G$1" pin="SC5" pad=""/>
-                <connect gate="G$1" pin="SD5" pad=""/>
-                <connect gate="G$1" pin="SC6" pad=""/>
-                <connect gate="G$1" pin="SD6" pad=""/>
-                <connect gate="G$1" pin="SC7" pad=""/>
-                <connect gate="G$1" pin="SD7" pad=""/>
+                <connect gate="G$1" pin="VCC"    pad="P_VCC"/>
+                <connect gate="G$1" pin="GND"    pad="P_GND"/>
+                <connect gate="G$1" pin="SCL_IN" pad="P_SCLIN"/>
+                <connect gate="G$1" pin="SDA_IN" pad="P_SDAIN"/>
+                <connect gate="G$1" pin="RST"    pad="P_RST"/>
+
+                <connect gate="G$1" pin="SC0" pad="P_SC0"/>
+                <connect gate="G$1" pin="SD0" pad="P_SD0"/>
+                <connect gate="G$1" pin="SC1" pad="P_SC1"/>
+                <connect gate="G$1" pin="SD1" pad="P_SD1"/>
+                <connect gate="G$1" pin="SC2" pad="P_SC2"/>
+                <connect gate="G$1" pin="SD2" pad="P_SD2"/>
+                <connect gate="G$1" pin="SC3" pad="P_SC3"/>
+                <connect gate="G$1" pin="SD3" pad="P_SD3"/>
+                <connect gate="G$1" pin="SC4" pad="P_SC4"/>
+                <connect gate="G$1" pin="SD4" pad="P_SD4"/>
+                <connect gate="G$1" pin="SC5" pad="P_SC5"/>
+                <connect gate="G$1" pin="SD5" pad="P_SD5"/>
+                <connect gate="G$1" pin="SC6" pad="P_SC6"/>
+                <connect gate="G$1" pin="SD6" pad="P_SD6"/>
+                <connect gate="G$1" pin="SC7" pad="P_SC7"/>
+                <connect gate="G$1" pin="SD7" pad="P_SD7"/>
               </connects>
 
               <technologies>
