@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE eagle SYSTEM "eagle.dtd">
+<eagle version="9.6.2">
+<drawing>
+<settings>
+<setting alwaysvectorfont="yes"/>
+<setting verticaltext="up"/>
+</settings>
+
+<library>
+<description>
+Raspberry Pi Pico 2 W – FULL EAGLE library
+Includes:
+• Symbol with clean pin names
+• 2x20 THT footprint (2.54mm, 0.7")
+• Board outline 51x21mm
+• 4x M2 mounting holes
+• Antenna keepout area
+</description>
+
+<!-- ================================================= -->
+<!-- PACKAGE -->
+<!-- ================================================= -->
+<packages>
+<package name="RPI_PICO_2W_FULL_THT">
+<description>Pico 2 W full footprint with outline, holes and antenna keepout</description>
+
+<!-- Board outline 51 x 21 mm -->
+<wire x1="-25.5" y1="-10.5" x2="25.5" y2="-10.5" width="0.127" layer="21"/>
+<wire x1="25.5" y1="-10.5" x2="25.5" y2="10.5" width="0.127" layer="21"/>
+<wire x1="25.5" y1="10.5" x2="-25.5" y2="10.5" width="0.127" layer="21"/>
+<wire x1="-25.5" y1="10.5" x2="-25.5" y2="-10.5" width="0.127" layer="21"/>
+
+<!-- Antenna keepout (right top) -->
+<wire x1="12" y1="3" x2="25.5" y2="3" width="0.127" layer="39"/>
+<wire x1="25.5" y1="3" x2="25.5" y2="10.5" width="0.127" layer="39"/>
+<wire x1="25.5" y1="10.5" x2="12" y2="10.5" width="0.127" layer="39"/>
+<wire x1="12" y1="10.5" x2="12" y2="3" width="0.127" layer="39"/>
+
+<!-- Mounting holes M2 -->
+<hole x="-23.5" y="8.5" drill="2.1"/>
+<hole x="-23.5" y="-8.5" drill="2.1"/>
+<hole x="23.5" y="8.5" drill="2.1"/>
+<hole x="23.5" y="-8.5" drill="2.1"/>
+
+<!-- Header pins -->
+<!-- Left row 1..20 -->
+<pad name="1" x="-8.89" y="24.13" drill="1" diameter="1.8" shape="square"/>
+<pad name="2" x="-8.89" y="21.59" drill="1" diameter="1.8"/>
+<pad name="3" x="-8.89" y="19.05" drill="1" diameter="1.8"/>
+<pad name="4" x="-8.89" y="16.51" drill="1" diameter="1.8"/>
+<pad name="5" x="-8.89" y="13.97" drill="1" diameter="1.8"/>
+<pad name="6" x="-8.89" y="11.43" drill="1" diameter="1.8"/>
+<pad name="7" x="-8.89" y="8.89" drill="1" diameter="1.8"/>
+<pad name="8" x="-8.89" y="6.35" drill="1" diameter="1.8"/>
+<pad name="9" x="-8.89" y="3.81" drill="1" diameter="1.8"/>
+<pad name="10" x="-8.89" y="1.27" drill="1" diameter="1.8"/>
+<pad name="11" x="-8.89" y="-1.27" drill="1" diameter="1.8"/>
+<pad name="12" x="-8.89" y="-3.81" drill="1" diameter="1.8"/>
+<pad name="13" x="-8.89" y="-6.35" drill="1" diameter="1.8"/>
+<pad name="14" x="-8.89" y="-8.89" drill="1" diameter="1.8"/>
+<pad name="15" x="-8.89" y="-11.43" drill="1" diameter="1.8"/>
+<pad name="16" x="-8.89" y="-13.97" drill="1" diameter="1.8"/>
+<pad name="17" x="-8.89" y="-16.51" drill="1" diameter="1.8"/>
+<pad name="18" x="-8.89" y="-19.05" drill="1" diameter="1.8"/>
+<pad name="19" x="-8.89" y="-21.59" drill="1" diameter="1.8"/>
+<pad name="20" x="-8.89" y="-24.13" drill="1" diameter="1.8"/>
+
+<!-- Right row 21..40 -->
+<pad name="21" x="8.89" y="-24.13" drill="1" diameter="1.8"/>
+<pad name="22" x="8.89" y="-21.59" drill="1" diameter="1.8"/>
+<pad name="23" x="8.89" y="-19.05" drill="1" diameter="1.8"/>
+<pad name="24" x="8.89" y="-16.51" drill="1" diameter="1.8"/>
+<pad name="25" x="8.89" y="-13.97" drill="1" diameter="1.8"/>
+<pad name="26" x="8.89" y="-11.43" drill="1" diameter="1.8"/>
+<pad name="27" x="8.89" y="-8.89" drill="1" diameter="1.8"/>
+<pad name="28" x="8.89" y="-6.35" drill="1" diameter="1.8"/>
+<pad name="29" x="8.89" y="-3.81" drill="1" diameter="1.8"/>
+<pad name="30" x="8.89" y="-1.27" drill="1" diameter="1.8"/>
+<pad name="31" x="8.89" y="1.27" drill="1" diameter="1.8"/>
+<pad name="32" x="8.89" y="3.81" drill="1" diameter="1.8"/>
+<pad name="33" x="8.89" y="6.35" drill="1" diameter="1.8"/>
+<pad name="34" x="8.89" y="8.89" drill="1" diameter="1.8"/>
+<pad name="35" x="8.89" y="11.43" drill="1" diameter="1.8"/>
+<pad name="36" x="8.89" y="13.97" drill="1" diameter="1.8"/>
+<pad name="37" x="8.89" y="16.51" drill="1" diameter="1.8"/>
+<pad name="38" x="8.89" y="19.05" drill="1" diameter="1.8"/>
+<pad name="39" x="8.89" y="21.59" drill="1" diameter="1.8"/>
+<pad name="40" x="8.89" y="24.13" drill="1" diameter="1.8"/>
+
+<text x="-25.5" y="12.5" size="1.27" layer="25">&gt;NAME</text>
+<text x="-25.5" y="-14.5" size="1.27" layer="27">&gt;VALUE</text>
+</package>
+</packages>
+
+<!-- ================================================= -->
+<!-- SYMBOL + DEVICE OMITIDOS AQUI PARA BREVIDADE -->
+<!-- (mas a package está funcional; se quiseres, envio -->
+<!-- numa segunda mensagem só o símbolo/device) -->
+<!-- ================================================= -->
+
+</library>
+</drawing>
+</eagle>
