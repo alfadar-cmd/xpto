@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE eagle SYSTEM "eagle.dtd">
+<eagle version="9.6.2">
+  <drawing>
+    <settings>
+      <setting alwaysvectorfont="yes"/>
+      <setting verticaltext="up"/>
+    </settings>
+
+    <library>
+      <description>
+Raspberry Pi Pico 2 W - EAGLE library
+Symbol (clean pin names) + 2x20 2.54mm header footprint + device mapping pins 1..40.
+Pin naming follows Pico/Pico W physical header numbering and functions.
+      </description>
+
+      <packages>
+        <package name="PICO_2W_HDR_2X20_2P54_0P7IN">
+          <description>
+2x20 header footprint for Pico form-factor.
+Pitch 2.54mm; row spacing 17.78mm (0.7").
+Pad drill 1.0mm (typical for Pico headers/castellations).
+Origin at centre between rows and mid-length.
+          </description>
+
+          <!-- Outline (silk) just around pins area -->
+          <wire x1="-11" y1="-25.5" x2="11" y2="-25.5" width="0.127" layer="21"/>
+          <wire x1="11" y1="-25.5" x2="11" y2="25.5" width="0.127" layer="21"/>
+          <wire x1="11" y1="25.5" x2="-11" y2="25.5" width="0.127" layer="21"/>
+          <wire x1="-11" y1="25.5" x2="-11" y2="-25.5" width="0.127" layer="21"/>
+
+          <!-- Left row (pins 1..20) at x = -8.89 -->
+          <!-- Pin 1 at top -->
+          <pad name="1"  x="-8.89" y="24.13" drill="1.0" diameter="1.8" shape="square"/>
+          <pad name="2"  x="-8.89" y="21.59" drill="1.0" diameter="1.8"/>
+          <pad name="3"  x="-8.89" y="19.05" drill="1.0" diameter="1.8"/>
+          <pad name="4"  x="-8.89" y="16.51" drill="1.0" diameter="1.8"/>
+          <pad name="5"  x="-8.89" y="13.97" drill="1.0" diameter="1.8"/>
+          <pad name="6"  x="-8.89" y="11.43" drill="1.0" diameter="1.8"/>
+          <pad name="7"  x="-8.89" y="8.89"  drill="1.0" diameter="1.8"/>
+          <pad name="8"  x="-8.89" y="6.35"  drill="1.0" diameter="1.8"/>
+          <pad name="9"  x="-8.89" y="3.81"  drill="1.0" diameter="1.8"/>
+          <pad name="10" x="-8.89" y="1.27"  drill="1.0" diameter="1.8"/>
+          <pad name="11" x="-8.89" y="-1.27" drill="1.0" diameter="1.8"/>
+          <pad name="12" x="-8.89" y="-3.81" drill="1.0" diameter="1.8"/>
+          <pad name="13" x="-8.89" y="-6.35" drill="1.0" diameter="1.8"/>
+          <pad name="14" x="-8.89" y="-8.89" drill="1.0" diameter="1.8"/>
+          <pad name="15" x="-8.89" y="-11.43" drill="1.0" diameter="1.8"/>
+          <pad name="16" x="-8.89" y="-13.97" drill="1.0" diameter="1.8"/>
+          <pad name="17" x="-8.89" y="-16.51" drill="1.0" diameter="1.8"/>
+          <pad name="18" x="-8.89" y="-19.05" drill="1.0" diameter="1.8"/>
+          <pad name="19" x="-8.89" y="-21.59" drill="1.0" diameter="1.8"/>
+          <pad name="20" x="-8.89" y="-24.13" drill="1.0" diameter="1.8"/>
+
+          <!-- Right row (pins 21..40) at x = +8.89 -->
+          <pad name="21" x="8.89" y="-24.13" drill="1.0" diameter="1.8"/>
+          <pad name="22" x="8.89" y="-21.59" drill="1.0" diameter="1.8"/>
+          <pad name="23" x="8.89" y="-19.05" drill="1.0" diameter="1.8"/>
+          <pad name="24" x="8.89" y="-16.51" drill="1.0" diameter="1.8"/>
+          <pad name="25" x="8.89" y="-13.97" drill="1.0" diameter="1.8"/>
+          <pad name="26" x="8.89" y="-11.43" drill="1.0" diameter="1.8"/>
+          <pad name="27" x="8.89" y="-8.89"  drill="1.0" diameter="1.8"/>
+          <pad name="28" x="8.89" y="-6.35"  drill="1.0" diameter="1.8"/>
+          <pad name="29" x="8.89" y="-3.81"  drill="1.0" diameter="1.8"/>
+          <pad name="30" x="8.89" y="-1.27"  drill="1.0" diameter="1.8"/>
+          <pad name="31" x="8.89" y="1.27"   drill="1.0" diameter="1.8"/>
+          <pad name="32" x="8.89" y="3.81"   drill="1.0" diameter="1.8"/>
+          <pad name="33" x="8.89" y="6.35"   drill="1.0" diameter="1.8"/>
+          <pad name="34" x="8.89" y="8.89"   drill="1.0" diameter="1.8"/>
+          <pad name="35" x="8.89" y="11.43"  drill="1.0" diameter="1.8"/>
+          <pad name="36" x="8.89" y="13.97"  drill="1.0" diameter="1.8"/>
+          <pad name="37" x="8.89" y="16.51"  drill="1.0" diameter="1.8"/>
+          <pad name="38" x="8.89" y="19.05"  drill="1.0" diameter="1.8"/>
+          <pad name="39" x="8.89" y="21.59"  drill="1.0" diameter="1.8"/>
+          <pad name="40" x="8.89" y="24.13"  drill="1.0" diameter="1.8"/>
+
+          <text x="-11" y="27.0" size="1.27" layer="25">&gt;NAME</text>
+          <text x="-11" y="-28.8" size="1.27" layer="27">&gt;VALUE</text>
+        </package>
+      </packages>
+
+      <symbols>
+        <symbol name="PICO_2W_HDR">
+          <description>Raspberry Pi Pico 2 W header (clean pin names, physical pin numbers 1..40).</description>
+
+          <wire x1="-30.48" y1="-30.48" x2="30.48" y2="-30.48" width="0.254" layer="94"/>
+          <wire x1="30.48" y1="-30.48" x2="30.48" y2="30.48" width="0.254" layer="94"/>
+          <wire x1="30.48" y1="30.48" x2="-30.48" y2="30.48" width="0.254" layer="94"/>
+          <wire x1="-30.48" y1="30.48" x2="-30.48" y2="-30.48" width="0.254" layer="94"/>
+
+          <text x="-30.48" y="31.75" size="1.778" layer="95">&gt;NAME</text>
+          <text x="-30.48" y="-33.02" size="1.778" layer="96">&gt;VALUE</text>
+
+          <!-- Left side pins (1..20) -->
+          <pin name="GP0"  x="-35.56" y="27.94" length="short" direction="io"/>
+          <pin name="GP1"  x="-35.56" y="25.40" length="short" direction="io"/>
+          <pin name="GND3" x="-35.56" y="22.86" length="short" direction="pwr"/>
+          <pin name="GP2"  x="-35.56" y="20.32" length="short" direction="io"/>
+          <pin name="GP3"  x="-35.56" y="17.78" length="short" direction="io"/>
+          <pin name="GP4"  x="-35.56" y="15.24" length="short" direction="io"/>
+          <pin name="GP5"  x="-35.56" y="12.70" length="short" direction="io"/>
+          <pin name="GND8" x="-35.56" y="10.16" length="short" direction="pwr"/>
+          <pin name="GP6"  x="-35.56" y="7.62"  length="short" direction="io"/>
+          <pin name="GP7"  x="-35.56" y="5.08"  length="short" direction="io"/>
+          <pin name="GP8"  x="-35.56" y="2.54"  length="short" direction="io"/>
+          <pin name="GP9"  x="-35.56" y="0.00"  length="short" direction="io"/>
+          <pin name="GND13" x="-35.56" y="-2.54" length="short" direction="pwr"/>
+          <pin name="GP10" x="-35.56" y="-5.08" length="short" direction="io"/>
+          <pin name="GP11" x="-35.56" y="-7.62" length="short" direction="io"/>
+          <pin name="GP12" x="-35.56" y="-10.16" length="short" direction="io"/>
+          <pin name="GP13" x="-35.56" y="-12.70" length="short" direction="io"/>
+          <pin name="GND18" x="-35.56" y="-15.24" length="short" direction="pwr"/>
+          <pin name="GP14" x="-35.56" y="-17.78" length="short" direction="io"/>
+          <pin name="GP15" x="-35.56" y="-20.32" length="short" direction="io"/>
+
+          <!-- Right side pins (21..40), bottom to top (match physical numbering) -->
+          <pin name="GP16" x="35.56" y="-20.32" length="short" direction="io" rot="R180"/>
+          <pin name="GP17" x="35.56" y="-17.78" length="short" direction="io" rot="R180"/>
+          <pin name="GND23" x="35.56" y="-15.24" length="short" direction="pwr" rot="R180"/>
+          <pin name="GP18" x="35.56" y="-12.70" length="short" direction="io" rot="R180"/>
+          <pin name="GP19" x="35.56" y="-10.16" length="short" direction="io" rot="R180"/>
+          <pin name="GP20" x="35.56" y="-7.62" length="short" direction="io" rot="R180"/>
+          <pin name="GP21" x="35.56" y="-5.08" length="short" direction="io" rot="R180"/>
+          <pin name="GND28" x="35.56" y="-2.54" length="short" direction="pwr" rot="R180"/>
+          <pin name="GP22" x="35.56" y="0.00" length="short" direction="io" rot="R180"/>
+          <pin name="RUN" x="35.56" y="2.54" length="short" direction="in" rot="R180"/>
+          <pin name="GP26_ADC0" x="35.56" y="5.08" length="short" direction="io" rot="R180"/>
+          <pin name="GP27_ADC1" x="35.56" y="7.62" length="short" direction="io" rot="R180"/>
+          <pin name="AGND" x="35.56" y="10.16" length="short" direction="pwr" rot="R180"/>
+          <pin name="GP28_ADC2" x="35.56" y="12.70" length="short" direction="io" rot="R180"/>
+          <pin name="ADC_VREF" x="35.56" y="15.24" length="short" direction="pwr" rot="R180"/>
+          <pin name="3V3" x="35.56" y="17.78" length="short" direction="pwr" rot="R180"/>
+          <pin name="3V3_EN" x="35.56" y="20.32" length="short" direction="in" rot="R180"/>
+          <pin name="GND38" x="35.56" y="22.86" length="short" direction="pwr" rot="R180"/>
+          <pin name="VSYS" x="35.56" y="25.40" length="short" direction="pwr" rot="R180"/>
+          <pin name="VBUS" x="35.56" y="27.94" length="short" direction="pwr" rot="R180"/>
+        </symbol>
+      </symbols>
+
+      <devicesets>
+        <deviceset name="RPI_PICO_2_W_HEADER" prefix="U">
+          <description>Raspberry Pi Pico 2 W - 2x20 header (pins 1..40) with clean pin names.</description>
+
+          <gates>
+            <gate name="G$1" symbol="PICO_2W_HDR" x="0" y="0"/>
+          </gates>
+
+          <devices>
+            <device name="" package="PICO_2W_HDR_2X20_2P54_0P7IN">
+              <connects>
+                <!-- left row -->
+                <connect gate="G$1" pin="GP0" pad="1"/>
+                <connect gate="G$1" pin="GP1" pad="2"/>
+                <connect gate="G$1" pin="GND3" pad="3"/>
+                <connect gate="G$1" pin="GP2" pad="4"/>
+                <connect gate="G$1" pin="GP3" pad="5"/>
+                <connect gate="G$1" pin="GP4" pad="6"/>
+                <connect gate="G$1" pin="GP5" pad="7"/>
+                <connect gate="G$1" pin="GND8" pad="8"/>
+                <connect gate="G$1" pin="GP6" pad="9"/>
+                <connect gate="G$1" pin="GP7" pad="10"/>
+                <connect gate="G$1" pin="GP8" pad="11"/>
+                <connect gate="G$1" pin="GP9" pad="12"/>
+                <connect gate="G$1" pin="GND13" pad="13"/>
+                <connect gate="G$1" pin="GP10" pad="14"/>
+                <connect gate="G$1" pin="GP11" pad="15"/>
+                <connect gate="G$1" pin="GP12" pad="16"/>
+                <connect gate="G$1" pin="GP13" pad="17"/>
+                <connect gate="G$1" pin="GND18" pad="18"/>
+                <connect gate="G$1" pin="GP14" pad="19"/>
+                <connect gate="G$1" pin="GP15" pad="20"/>
+
+                <!-- right row -->
+                <connect gate="G$1" pin="GP16" pad="21"/>
+                <connect gate="G$1" pin="GP17" pad="22"/>
+                <connect gate="G$1" pin="GND23" pad="23"/>
+                <connect gate="G$1" pin="GP18" pad="24"/>
+                <connect gate="G$1" pin="GP19" pad="25"/>
+                <connect gate="G$1" pin="GP20" pad="26"/>
+                <connect gate="G$1" pin="GP21" pad="27"/>
+                <connect gate="G$1" pin="GND28" pad="28"/>
+                <connect gate="G$1" pin="GP22" pad="29"/>
+                <connect gate="G$1" pin="RUN" pad="30"/>
+                <connect gate="G$1" pin="GP26_ADC0" pad="31"/>
+                <connect gate="G$1" pin="GP27_ADC1" pad="32"/>
+                <connect gate="G$1" pin="AGND" pad="33"/>
+                <connect gate="G$1" pin="GP28_ADC2" pad="34"/>
+                <connect gate="G$1" pin="ADC_VREF" pad="35"/>
+                <connect gate="G$1" pin="3V3" pad="36"/>
+                <connect gate="G$1" pin="3V3_EN" pad="37"/>
+                <connect gate="G$1" pin="GND38" pad="38"/>
+                <connect gate="G$1" pin="VSYS" pad="39"/>
+                <connect gate="G$1" pin="VBUS" pad="40"/>
+              </connects>
+
+              <technologies>
+                <technology name=""/>
+              </technologies>
+            </device>
+          </devices>
+        </deviceset>
+      </devicesets>
+
+    </library>
+  </drawing>
+</eagle>
