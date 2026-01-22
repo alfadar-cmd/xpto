@@ -10,7 +10,7 @@
 <library>
 <description>
 WS2812 / NeoPixel single LED
-PAD version for soldering wires
+THT version with 2.54mm pins
 Pins: 5V, DIN, GND, DOUT
 Compatible with EAGLE 9
 </description>
@@ -19,28 +19,31 @@ Compatible with EAGLE 9
 <!-- PACKAGE -->
 <!-- ================================================= -->
 <packages>
-<package name="WS2812_PADS_4">
-<description>4 pads for WS2812 wires (5V, DIN, GND, DOUT)</description>
+<package name="WS2812_THT_2P54">
+<description>WS2812 single LED – 4x THT pads, 2.54mm pitch</description>
 
-<!-- Pads layout: left = inputs, right = output -->
-<!-- Vertical spacing 2.54mm -->
+<!-- Pads: left column = IN, right = OUT -->
+<!-- Drill 1.0mm, good for wires or pin headers -->
 
-<!-- Left side -->
-<smd name="5V"  x="-3.5" y="2.54" dx="3.0" dy="2.0" layer="1"/>
-<smd name="DIN" x="-3.5" y="0.00" dx="3.0" dy="2.0" layer="1"/>
-<smd name="GND" x="-3.5" y="-2.54" dx="3.0" dy="2.0" layer="1"/>
+<pad name="5V"  x="0"    y="2.54" drill="1.0" diameter="1.8" shape="square"/>
+<pad name="DIN" x="0"    y="0.00" drill="1.0" diameter="1.8"/>
+<pad name="GND" x="0"    y="-2.54" drill="1.0" diameter="1.8"/>
 
-<!-- Right side -->
-<smd name="DOUT" x="3.5" y="0.00" dx="3.0" dy="2.0" layer="1"/>
+<pad name="DOUT" x="2.54" y="0.00" drill="1.0" diameter="1.8"/>
 
-<!-- Silk labels -->
-<text x="-6.5" y="2.1" size="1.27" layer="21">5V</text>
-<text x="-6.5" y="-0.4" size="1.27" layer="21">DIN</text>
-<text x="-6.5" y="-2.9" size="1.27" layer="21">GND</text>
-<text x="4.2"  y="-0.4" size="1.27" layer="21">DO</text>
+<!-- Silk -->
+<wire x1="-1.5" y1="4.0" x2="4.0" y2="4.0" width="0.127" layer="21"/>
+<wire x1="4.0" y1="4.0" x2="4.0" y2="-4.0" width="0.127" layer="21"/>
+<wire x1="4.0" y1="-4.0" x2="-1.5" y2="-4.0" width="0.127" layer="21"/>
+<wire x1="-1.5" y1="-4.0" x2="-1.5" y2="4.0" width="0.127" layer="21"/>
 
-<text x="-7" y="4.8" size="1.27" layer="25">&gt;NAME</text>
-<text x="-7" y="-6.6" size="1.27" layer="27">&gt;VALUE</text>
+<text x="-3.0" y="2.1" size="1.27" layer="21">5V</text>
+<text x="-3.0" y="-0.4" size="1.27" layer="21">DIN</text>
+<text x="-3.0" y="-2.9" size="1.27" layer="21">GND</text>
+<text x="3.3"  y="-0.4" size="1.27" layer="21">DO</text>
+
+<text x="-4.5" y="4.8" size="1.27" layer="25">&gt;NAME</text>
+<text x="-4.5" y="-6.4" size="1.27" layer="27">&gt;VALUE</text>
 </package>
 </packages>
 
@@ -49,7 +52,7 @@ Compatible with EAGLE 9
 <!-- ================================================= -->
 <symbols>
 <symbol name="WS2812_SINGLE">
-<description>Single WS2812 / NeoPixel (pad version)</description>
+<description>Single WS2812 / NeoPixel</description>
 
 <wire x1="-10.16" y1="-7.62" x2="10.16" y2="-7.62" width="0.254" layer="94"/>
 <wire x1="10.16" y1="-7.62" x2="10.16" y2="7.62" width="0.254" layer="94"/>
@@ -73,15 +76,15 @@ Compatible with EAGLE 9
 <!-- DEVICE -->
 <!-- ================================================= -->
 <devicesets>
-<deviceset name="WS2812_SINGLE_PADS" prefix="LED">
-<description>Single WS2812 / NeoPixel – wire pads version</description>
+<deviceset name="WS2812_SINGLE_THT" prefix="LED">
+<description>Single WS2812 / NeoPixel – THT 2.54mm pads</description>
 
 <gates>
 <gate name="G$1" symbol="WS2812_SINGLE" x="0" y="0"/>
 </gates>
 
 <devices>
-<device name="" package="WS2812_PADS_4">
+<device name="" package="WS2812_THT_2P54">
 <connects>
 <connect gate="G$1" pin="5V"  pad="5V"/>
 <connect gate="G$1" pin="DIN" pad="DIN"/>
