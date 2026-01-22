@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE eagle SYSTEM "eagle.dtd">
+<eagle version="9.6.2">
+<drawing>
+<settings>
+<setting alwaysvectorfont="yes"/>
+<setting verticaltext="up"/>
+</settings>
+
+<library>
+<description>
+WS2812 / NeoPixel single LED
+Simple symbol + 5050 SMD footprint
+Pins: 5V, GND, DIN, DOUT
+Compatible with EAGLE 9
+</description>
+
+<!-- ================================================= -->
+<!-- PACKAGE -->
+<!-- ================================================= -->
+<packages>
+<package name="WS2812_5050_SMD">
+<description>WS2812B LED – 5050 SMD footprint</description>
+
+<!-- Body outline -->
+<wire x1="-2.5" y1="-2.5" x2="2.5" y2="-2.5" width="0.127" layer="21"/>
+<wire x1="2.5" y1="-2.5" x2="2.5" y2="2.5" width="0.127" layer="21"/>
+<wire x1="2.5" y1="2.5" x2="-2.5" y2="2.5" width="0.127" layer="21"/>
+<wire x1="-2.5" y1="2.5" x2="-2.5" y2="-2.5" width="0.127" layer="21"/>
+
+<!-- Pads (standard WS2812 order) -->
+<smd name="VDD"  x="0"    y="2.9" dx="1.5" dy="1.2" layer="1"/>
+<smd name="DOUT" x="2.9"  y="0"   dx="1.5" dy="1.2" layer="1"/>
+<smd name="VSS"  x="0"    y="-2.9" dx="1.5" dy="1.2" layer="1"/>
+<smd name="DIN"  x="-2.9" y="0"   dx="1.5" dy="1.2" layer="1"/>
+
+<!-- Pin 1 marker -->
+<circle x="-1.8" y="1.8" radius="0.4" width="0.127" layer="21"/>
+
+<text x="-3" y="3.4" size="1.27" layer="25">&gt;NAME</text>
+<text x="-3" y="-4.8" size="1.27" layer="27">&gt;VALUE</text>
+</package>
+</packages>
+
+<!-- ================================================= -->
+<!-- SYMBOL -->
+<!-- ================================================= -->
+<symbols>
+<symbol name="WS2812_SINGLE">
+<description>Single WS2812 / NeoPixel LED</description>
+
+<wire x1="-10.16" y1="-7.62" x2="10.16" y2="-7.62" width="0.254" layer="94"/>
+<wire x1="10.16" y1="-7.62" x2="10.16" y2="7.62" width="0.254" layer="94"/>
+<wire x1="10.16" y1="7.62" x2="-10.16" y2="7.62" width="0.254" layer="94"/>
+<wire x1="-10.16" y1="7.62" x2="-10.16" y2="-7.62" width="0.254" layer="94"/>
+
+<text x="-10.16" y="8.89" size="1.778" layer="95">&gt;NAME</text>
+<text x="-10.16" y="-10.16" size="1.778" layer="96">&gt;VALUE</text>
+
+<pin name="5V"  x="-15.24" y="2.54" length="short" direction="pwr"/>
+<pin name="DIN" x="-15.24" y="0.00" length="short" direction="in"/>
+<pin name="GND" x="-15.24" y="-2.54" length="short" direction="pwr"/>
+
+<pin name="DOUT" x="15.24" y="0.00" length="short" direction="out" rot="R180"/>
+
+<text x="-7.62" y="4.06" size="1.27" layer="94">WS2812</text>
+</symbol>
+</symbols>
+
+<!-- ================================================= -->
+<!-- DEVICE -->
+<!-- ================================================= -->
+<devicesets>
+<deviceset name="WS2812_SINGLE" prefix="LED">
+<description>Single WS2812 / NeoPixel LED</description>
+
+<gates>
+<gate name="G$1" symbol="WS2812_SINGLE" x="0" y="0"/>
+</gates>
+
+<devices>
+<device name="" package="WS2812_5050_SMD">
+<connects>
+<connect gate="G$1" pin="5V"  pad="VDD"/>
+<connect gate="G$1" pin="GND" pad="VSS"/>
+<connect gate="G$1" pin="DIN" pad="DIN"/>
+<connect gate="G$1" pin="DOUT" pad="DOUT"/>
+</connects>
+
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+
+</library>
+</drawing>
+</eagle>
