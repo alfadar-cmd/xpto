@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE eagle SYSTEM "eagle.dtd">
+<eagle version="9.6.2">
+  <drawing>
+    <settings>
+      <setting alwaysvectorfont="yes"/>
+      <setting verticaltext="up"/>
+    </settings>
+
+    <library>
+      <description>
+WS2812B / NeoPixel LED strip segment - 2 LEDs
+Based on 60 LED/m, 5V, 10mm FPC width.
+Segment length: 33.33mm (2 x 16.67mm).
+Pads order: GND / DATA / 5V.
+SYMBOL COMPACT for schematic demonstration.
+      </description>
+
+      <!-- ================================================= -->
+      <!-- PACKAGE (inalterado) -->
+      <!-- ================================================= -->
+      <packages>
+        <package name="WS2812B_STRIP_2LED_10MM_INOUT_PADS">
+          <description>
+10mm wide strip segment footprint (2 LEDs @ 60 LED/m).
+IN pads on left, OUT pads on right.
+          </description>
+
+          <!-- Keepout / outline -->
+          <wire x1="-16.665" y1="-5" x2="16.665" y2="-5" width="0.127" layer="39"/>
+          <wire x1="16.665" y1="-5" x2="16.665" y2="5" width="0.127" layer="39"/>
+          <wire x1="16.665" y1="5" x2="-16.665" y2="5" width="0.127" layer="39"/>
+          <wire x1="-16.665" y1="5" x2="-16.665" y2="-5" width="0.127" layer="39"/>
+
+          <!-- Silkscreen -->
+          <wire x1="-16.665" y1="-5" x2="16.665" y2="-5" width="0.127" layer="21"/>
+          <wire x1="16.665" y1="-5" x2="16.665" y2="5" width="0.127" layer="21"/>
+          <wire x1="16.665" y1="5" x2="-16.665" y2="5" width="0.127" layer="21"/>
+          <wire x1="-16.665" y1="5" x2="-16.665" y2="-5" width="0.127" layer="21"/>
+
+          <!-- IN pads -->
+          <smd name="GND_IN" x="-14.5" y="2.54"  dx="3.2" dy="2.0" layer="1"/>
+          <smd name="DIN"    x="-14.5" y="0.00"  dx="3.2" dy="2.0" layer="1"/>
+          <smd name="5V_IN"  x="-14.5" y="-2.54" dx="3.2" dy="2.0" layer="1"/>
+
+          <!-- OUT pads -->
+          <smd name="GND_OUT" x="14.5" y="2.54"  dx="3.2" dy="2.0" layer="1"/>
+          <smd name="DOUT"    x="14.5" y="0.00"  dx="3.2" dy="2.0" layer="1"/>
+          <smd name="5V_OUT"  x="14.5" y="-2.54" dx="3.2" dy="2.0" layer="1"/>
+
+          <text x="-16.665" y="-7.8" size="1.27" layer="25">&gt;NAME</text>
+          <text x="-16.665" y="-9.6" size="1.27" layer="27">&gt;VALUE</text>
+        </package>
+      </packages>
+
+      <!-- ================================================= -->
+      <!-- SYMBOL (COMPACTO) -->
+      <!-- ================================================= -->
+      <symbols>
+        <symbol name="WS2812B_STRIP_2LED">
+          <description>WS2812B strip segment (2 LEDs) – COMPACT symbol.</description>
+
+          <!-- Compact rectangle -->
+          <wire x1="-7.62" y1="-5.08" x2="7.62" y2="-5.08" width="0.254" layer="94"/>
+          <wire x1="7.62"  y1="-5.08" x2="7.62" y2="5.08"  width="0.254" layer="94"/>
+          <wire x1="7.62"  y1="5.08"  x2="-7.62" y2="5.08"  width="0.254" layer="94"/>
+          <wire x1="-7.62" y1="5.08"  x2="-7.62" y2="-5.08" width="0.254" layer="94"/>
+
+          <!-- Name / Value -->
+          <text x="-7.62" y="6.35" size="1.27" layer="95">&gt;NAME</text>
+          <text x="-7.62" y="-7.62" size="1.27" layer="96">&gt;VALUE</text>
+
+          <!-- IN (left) -->
+          <pin name="5V"  x="-12.70" y="2.54" length="short" direction="pwr"/>
+          <pin name="GND" x="-12.70" y="0.00" length="short" direction="pwr"/>
+          <pin name="DIN" x="-12.70" y="-2.54" length="short" direction="in"/>
+
+          <!-- OUT (right) -->
+          <pin name="5V_OUT"  x="12.70" y="2.54" length="short" direction="pwr" rot="R180"/>
+          <pin name="GND_OUT" x="12.70" y="0.00" length="short" direction="pwr" rot="R180"/>
+          <pin name="DOUT"    x="12.70" y="-2.54" length="short" direction="out" rot="R180"/>
+
+          <text x="0" y="0" size="1.27" layer="94" align="center">WS2812B ×2</text>
+        </symbol>
+      </symbols>
+
+      <!-- ================================================= -->
+      <!-- DEVICESET (inalterado) -->
+      <!-- ================================================= -->
+      <devicesets>
+        <deviceset name="WS2812B_STRIP_2LED_10MM" prefix="LED">
+          <description>WS2812B strip segment, 2 LEDs, 10mm width.</description>
+
+          <gates>
+            <gate name="G$1" symbol="WS2812B_STRIP_2LED" x="0" y="0"/>
+          </gates>
+
+          <devices>
+            <device name="" package="WS2812B_STRIP_2LED_10MM_INOUT_PADS">
+              <connects>
+                <connect gate="G$1" pin="5V"      pad="5V_IN"/>
+                <connect gate="G$1" pin="GND"     pad="GND_IN"/>
+                <connect gate="G$1" pin="DIN"     pad="DIN"/>
+                <connect gate="G$1" pin="5V_OUT"  pad="5V_OUT"/>
+                <connect gate="G$1" pin="GND_OUT" pad="GND_OUT"/>
+                <connect gate="G$1" pin="DOUT"    pad="DOUT"/>
+              </connects>
+
+              <technologies>
+                <technology name=""/>
+              </technologies>
+            </device>
+          </devices>
+        </deviceset>
+      </devicesets>
+
+    </library>
+  </drawing>
+</eagle>
