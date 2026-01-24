@@ -70,8 +70,9 @@ Pin order: VCC, GND, SCL, SDA
 <pin name="SCL" x="-15.24" y="-2.54" length="short" direction="io"/>
 <pin name="SDA" x="-15.24" y="-5.08" length="short" direction="io"/>
 
-<text x="8.89" y="4.06" size="1.27" layer="94" align="right">VL53L0X</text>
-<text x="8.89" y="2.54" size="1.27" layer="94" align="right">ToF Sensor</text>
+<text x="1.62" y="4.06" size="1.27" layer="94">VL53L0X</text>
+<text x="1.62" y="2.54" size="1.27" layer="94">ToF Sensor</text>
+
 
 </symbol>
 </symbols>
