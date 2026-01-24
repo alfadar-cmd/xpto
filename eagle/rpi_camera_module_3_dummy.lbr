@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE eagle SYSTEM "eagle.dtd">
+<eagle version="9.6.2">
+  <drawing>
+    <settings>
+      <setting alwaysvectorfont="yes"/>
+      <setting verticaltext="up"/>
+    </settings>
+
+    <library>
+      <description>
+Raspberry Pi Camera Module 3 (SC1223 / IMX708) - DUMMY / MECH ONLY
+For placement and mechanical clearance in PCB + clean block in schematic.
+
+- Board size: 25 x 24 mm (module overall)
+- Mounting holes: Ø2.2 mm (positions same as Camera Module 2)
+- Cable connector on module: 15 x 1mm FPC (info only)
+
+Compatible with EAGLE 9.6.2
+      </description>
+
+      <!-- ===================== -->
+      <!-- PACKAGE (MECHANICAL) -->
+      <!-- ===================== -->
+      <packages>
+        <package name="RPI_CAM3_DUMMY_25X24_4X_M2P2">
+          <description>
+Mechanical dummy footprint for Raspberry Pi Camera Module 3.
+Outline 25x24mm, 4 mounting holes Ø2.2mm, keepout same as outline.
+Origin at board centre (0,0).
+Hole coordinates use the common Camera Module hole pattern (same as Camera Module 2).
+          </description>
+
+          <!-- Board outline (silk) -->
+          <!-- 25 x 24 mm => half sizes: 12.5 and 12.0 -->
+          <wire x1="-12.5" y1="-12.0" x2="12.5" y2="-12.0" width="0.127" layer="21"/>
+          <wire x1="12.5"  y1="-12.0" x2="12.5" y2="12.0"  width="0.127" layer="21"/>
+          <wire x1="12.5"  y1="12.0"  x2="-12.5" y2="12.0" width="0.127" layer="21"/>
+          <wire x1="-12.5" y1="12.0"  x2="-12.5" y2="-12.0" width="0.127" layer="21"/>
+
+          <!-- Keepout (reserve module area) -->
+          <wire x1="-12.5" y1="-12.0" x2="12.5" y2="-12.0" width="0.127" layer="39"/>
+          <wire x1="12.5"  y1="-12.0" x2="12.5" y2="12.0"  width="0.127" layer="39"/>
+          <wire x1="12.5"  y1="12.0"  x2="-12.5" y2="12.0" width="0.127" layer="39"/>
+          <wire x1="-12.5" y1="12.0"  x2="-12.5" y2="-12.0" width="0.127" layer="39"/>
+
+          <!-- Mounting holes (NPTH) Ø2.2mm -->
+          <!-- Hole pattern used by Camera Module 2/3 (common pattern). -->
+          <!-- If you later want I adjust to your exact standoffs, tell me your measured offsets. -->
+          <hole x="-10.8" y="10.8" drill="2.2"/>
+          <hole x="10.8"  y="10.8" drill="2.2"/>
+          <hole x="-10.8" y="-10.8" drill="2.2"/>
+          <hole x="10.8"  y="-10.8" drill="2.2"/>
+
+          <!-- Optional: lens keepout marker (approx visual aid) -->
+          <circle x="0" y="0" radius="3.0" width="0.127" layer="21"/>
+          <circle x="0" y="0" radius="3.0" width="0.127" layer="39"/>
+
+          <text x="-12.5" y="13.2" size="1.27" layer="25">&gt;NAME</text>
+          <text x="-12.5" y="-14.7" size="1.27" layer="27">&gt;VALUE</text>
+        </package>
+      </packages>
+
+      <!-- ============ -->
+      <!-- SYMBOL      -->
+      <!-- ============ -->
+      <symbols>
+        <symbol name="RPI_CAM3_DUMMY">
+          <description>Raspberry Pi Camera Module 3 - dummy block (no electrical pins)</description>
+
+          <wire x1="-15.24" y1="-7.62" x2="15.24" y2="-7.62" width="0.254" layer="94"/>
+          <wire x1="15.24"  y1="-7.62" x2="15.24" y2="7.62"  width="0.254" layer="94"/>
+          <wire x1="15.24"  y1="7.62"  x2="-15.24" y2="7.62" width="0.254" layer="94"/>
+          <wire x1="-15.24" y1="7.62"  x2="-15.24" y2="-7.62" width="0.254" layer="94"/>
+
+          <text x="-15.24" y="8.89" size="1.778" layer="95">&gt;NAME</text>
+          <text x="-15.24" y="-10.16" size="1.778" layer="96">&gt;VALUE</text>
+
+          <text x="0" y="2.54" size="1.27" layer="94" align="center">Raspberry Pi</text>
+          <text x="0" y="0.00" size="1.27" layer="94" align="center">Camera Module 3</text>
+          <text x="0" y="-2.54" size="1.27" layer="94" align="center">(Dummy / Mech)</text>
+        </symbol>
+      </symbols>
+
+      <!-- ============ -->
+      <!-- DEVICESET   -->
+      <!-- ============ -->
+      <devicesets>
+        <deviceset name="RPI_CAMERA_MODULE_3_DUMMY" prefix="CAM">
+          <description>
+Mechanical dummy for Raspberry Pi Camera Module 3 (SC1223 / IMX708).
+No electrical pins in schematic. Use only for documentation + mechanical placement.
+Dimensions 25x24mm; holes Ø2.2mm; connector uses 15x1mm FPC (info).
+          </description>
+
+          <gates>
+            <gate name="G$1" symbol="RPI_CAM3_DUMMY" x="0" y="0"/>
+          </gates>
+
+          <devices>
+            <device name="" package="RPI_CAM3_DUMMY_25X24_4X_M2P2">
+              <!-- No connects because symbol has no pins -->
+              <technologies>
+                <technology name=""/>
+              </technologies>
+            </device>
+          </devices>
+        </deviceset>
+      </devicesets>
+
+    </library>
+  </drawing>
+</eagle>
