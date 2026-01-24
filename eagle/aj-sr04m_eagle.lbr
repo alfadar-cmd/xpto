@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE eagle SYSTEM "eagle.dtd">
+<eagle version="9.6.2">
+<drawing>
+<settings>
+<setting alwaysvectorfont="yes"/>
+<setting verticaltext="up"/>
+</settings>
+
+<library>
+<description>
+AJ-SR04M Waterproof Ultrasonic Distance Sensor Module
+Simple system-level symbol + 4-pin 2.54mm THT footprint
+Pins: VCC, TRIG, ECHO, GND
+Compatible with EAGLE 9.6.2
+</description>
+
+<!-- ================================================= -->
+<!-- PACKAGE -->
+<!-- ================================================= -->
+<packages>
+  <package name="AJ_SR04M_4P_THT_2P54">
+    <description>
+4-pin THT pads, 2.54mm pitch (for wires or pin header).
+Order top-to-bottom: VCC, TRIG, ECHO, GND.
+    </description>
+
+    <!-- Pads (vertical) -->
+    <pad name="VCC"  x="0" y="3.81" drill="1.0" diameter="1.8" shape="square"/>
+    <pad name="TRIG" x="0" y="1.27" drill="1.0" diameter="1.8"/>
+    <pad name="ECHO" x="0" y="-1.27" drill="1.0" diameter="1.8"/>
+    <pad name="GND"  x="0" y="-3.81" drill="1.0" diameter="1.8"/>
+
+    <!-- Small silk box -->
+    <wire x1="-3.5" y1="6" x2="3.5" y2="6" width="0.127" layer="21"/>
+    <wire x1="3.5" y1="6" x2="3.5" y2="-6" width="0.127" layer="21"/>
+    <wire x1="3.5" y1="-6" x2="-3.5" y2="-6" width="0.127" layer="21"/>
+    <wire x1="-3.5" y1="-6" x2="-3.5" y2="6" width="0.127" layer="21"/>
+
+    <!-- Labels (silk) -->
+    <text x="-7.2" y="3.4" size="1.27" layer="21">VCC</text>
+    <text x="-7.2" y="0.9" size="1.27" layer="21">TRIG</text>
+    <text x="-7.2" y="-1.6" size="1.27" layer="21">ECHO</text>
+    <text x="-7.2" y="-4.1" size="1.27" layer="21">GND</text>
+
+    <text x="-6.5" y="6.8" size="1.27" layer="25">&gt;NAME</text>
+    <text x="-6.5" y="-8.5" size="1.27" layer="27">&gt;VALUE</text>
+  </package>
+</packages>
+
+<!-- ================================================= -->
+<!-- SYMBOL -->
+<!-- ================================================= -->
+<symbols>
+  <symbol name="AJ_SR04M_ULTRASONIC">
+    <description>AJ-SR04M Ultrasonic Sensor Module (Trigger/Echo mode)</description>
+
+    <wire x1="-12.70" y1="-7.62" x2="12.70" y2="-7.62" width="0.254" layer="94"/>
+    <wire x1="12.70" y1="-7.62" x2="12.70" y2="7.62"  width="0.254" layer="94"/>
+    <wire x1="12.70" y1="7.62"  x2="-12.70" y2="7.62"  width="0.254" layer="94"/>
+    <wire x1="-12.70" y1="7.62" x2="-12.70" y2="-7.62" width="0.254" layer="94"/>
+
+    <text x="-12.70" y="8.89" size="1.778" layer="95">&gt;NAME</text>
+    <text x="-12.70" y="-10.16" size="1.778" layer="96">&gt;VALUE</text>
+
+    <!-- Pins -->
+    <pin name="VCC"  x="-17.78" y="2.54" length="short" direction="pwr"/>
+    <pin name="GND"  x="-17.78" y="0.00" length="short" direction="pwr"/>
+
+    <pin name="TRIG" x="-17.78" y="-2.54" length="short" direction="in"/>
+    <pin name="ECHO" x="17.78"  y="-2.54" length="short" direction="out" rot="R180"/>
+
+    <!-- Label -->
+    <text x="0" y="4.06" size="1.27" layer="94" align="center">AJ-SR04M</text>
+    <text x="0" y="2.54" size="1.27" layer="94" align="center">Ultrasonic</text>
+  </symbol>
+</symbols>
+
+<!-- ================================================= -->
+<!-- DEVICESET -->
+<!-- ================================================= -->
+<devicesets>
+  <deviceset name="AJ_SR04M" prefix="U">
+    <description>AJ-SR04M Waterproof Ultrasonic Distance Sensor Module (VCC/GND/TRIG/ECHO).</description>
+
+    <gates>
+      <gate name="G$1" symbol="AJ_SR04M_ULTRASONIC" x="0" y="0"/>
+    </gates>
+
+    <devices>
+      <device name="" package="AJ_SR04M_4P_THT_2P54">
+        <connects>
+          <connect gate="G$1" pin="VCC"  pad="VCC"/>
+          <connect gate="G$1" pin="GND"  pad="GND"/>
+          <connect gate="G$1" pin="TRIG" pad="TRIG"/>
+          <connect gate="G$1" pin="ECHO" pad="ECHO"/>
+        </connects>
+
+        <technologies>
+          <technology name=""/>
+        </technologies>
+      </device>
+    </devices>
+  </deviceset>
+</devicesets>
+
+</library>
+</drawing>
+</eagle>
