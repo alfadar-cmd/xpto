@@ -68,43 +68,46 @@ All connectors THT 2.54mm
 <!-- ================================================= -->
 <symbols>
 <symbol name="I2C_SENSOR_HUB">
-<description>I2C Sensor Hub – 1 IN + 3 OUT</description>
+  <description>I2C Sensor Hub – 1 IN + 3 OUT (distributed pins)</description>
 
-<wire x1="-17.78" y1="-12.70" x2="17.78" y2="-12.70" width="0.254" layer="94"/>
-<wire x1="17.78" y1="-12.70" x2="17.78" y2="12.70" width="0.254" layer="94"/>
-<wire x1="17.78" y1="12.70" x2="-17.78" y2="12.70" width="0.254" layer="94"/>
-<wire x1="-17.78" y1="12.70" x2="-17.78" y2="-12.70" width="0.254" layer="94"/>
+  <!-- Body -->
+  <wire x1="-17.78" y1="-12.70" x2="17.78" y2="-12.70" width="0.254" layer="94"/>
+  <wire x1="17.78"  y1="-12.70" x2="17.78"  y2="12.70"  width="0.254" layer="94"/>
+  <wire x1="17.78"  y1="12.70"  x2="-17.78" y2="12.70"  width="0.254" layer="94"/>
+  <wire x1="-17.78" y1="12.70"  x2="-17.78" y2="-12.70" width="0.254" layer="94"/>
 
-<text x="-17.78" y="13.97" size="1.778" layer="95">&gt;NAME</text>
-<text x="-17.78" y="-15.24" size="1.778" layer="96">&gt;VALUE</text>
+  <!-- Name / Value -->
+  <text x="-17.78" y="13.97" size="1.778" layer="95">&gt;NAME</text>
+  <text x="-17.78" y="-15.24" size="1.778" layer="96">&gt;VALUE</text>
 
-<!-- IN -->
-<pin name="5V_IN"  x="-22.86" y="5.08"  length="short" direction="pwr"/>
-<pin name="GND_IN" x="-22.86" y="2.54"  length="short" direction="pwr"/>
-<pin name="SCL"    x="-22.86" y="-2.54" length="short" direction="io"/>
-<pin name="SDA"    x="-22.86" y="-5.08" length="short" direction="io"/>
+  <!-- ================= IN (left) ================= -->
+  <pin name="5V_IN"  x="-22.86" y="5.08"  length="short" direction="pwr"/>
+  <pin name="GND_IN" x="-22.86" y="2.54"  length="short" direction="pwr"/>
+  <pin name="SCL"    x="-22.86" y="-2.54" length="short" direction="io"/>
+  <pin name="SDA"    x="-22.86" y="-5.08" length="short" direction="io"/>
 
-<!-- OUT1 -->
-<pin name="5V_1"  x="22.86" y="7.62" length="short" direction="pwr" rot="R180"/>
-<pin name="GND_1" x="22.86" y="5.08" length="short" direction="pwr" rot="R180"/>
-<pin name="SCL_1" x="22.86" y="2.54" length="short" direction="io"  rot="R180"/>
-<pin name="SDA_1" x="22.86" y="0.00" length="short" direction="io"  rot="R180"/>
+  <!-- ================= OUT 1 (right) ================= -->
+  <pin name="5V_1"  x="22.86" y="5.08" length="short" direction="pwr" rot="R180"/>
+  <pin name="GND_1" x="22.86" y="2.54" length="short" direction="pwr" rot="R180"/>
+  <pin name="SCL_1" x="22.86" y="-2.54" length="short" direction="io"  rot="R180"/>
+  <pin name="SDA_1" x="22.86" y="-5.08" length="short" direction="io"  rot="R180"/>
 
-<!-- OUT2 -->
-<pin name="5V_2"  x="22.86" y="-2.54" length="short" direction="pwr" rot="R180"/>
-<pin name="GND_2" x="22.86" y="-5.08" length="short" direction="pwr" rot="R180"/>
-<pin name="SCL_2" x="22.86" y="-7.62" length="short" direction="io"  rot="R180"/>
-<pin name="SDA_2" x="22.86" y="-10.16" length="short" direction="io"  rot="R180"/>
+  <!-- ================= OUT 2 (top) ================= -->
+  <pin name="5V_2"  x="-5.08" y="17.78" length="short" direction="pwr" rot="R270"/>
+  <pin name="GND_2" x="-2.54" y="17.78" length="short" direction="pwr" rot="R270"/>
+  <pin name="SCL_2" x="2.54"  y="17.78" length="short" direction="io"  rot="R270"/>
+  <pin name="SDA_2" x="5.08"  y="17.78" length="short" direction="io"  rot="R270"/>
 
-<!-- OUT3 -->
-<pin name="5V_3"  x="22.86" y="-12.70" length="short" direction="pwr" rot="R180"/>
-<pin name="GND_3" x="22.86" y="-15.24" length="short" direction="pwr" rot="R180"/>
-<pin name="SCL_3" x="22.86" y="-17.78" length="short" direction="io"  rot="R180"/>
-<pin name="SDA_3" x="22.86" y="-20.32" length="short" direction="io"  rot="R180"/>
+  <!-- ================= OUT 3 (bottom) ================= -->
+  <pin name="5V_3"  x="-5.08" y="-17.78" length="short" direction="pwr" rot="R90"/>
+  <pin name="GND_3" x="-2.54" y="-17.78" length="short" direction="pwr" rot="R90"/>
+  <pin name="SCL_3" x="2.54"  y="-17.78" length="short" direction="io"  rot="R90"/>
+  <pin name="SDA_3" x="5.08"  y="-17.78" length="short" direction="io"  rot="R90"/>
 
-<text x="-10.16" y="-1.27" size="1.27" layer="94">
+  <!-- Label -->
+  <text x="-8.89" y="-1.27" size="1.27" layer="94">
 Hub I2C de Sensores
-</text>
+  </text>
 </symbol>
 </symbols>
 
