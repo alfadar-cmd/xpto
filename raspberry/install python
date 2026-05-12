@@ -1,0 +1,221 @@
+# Instalação de Python no Raspberry Pi
+
+Este guia apresenta uma forma simples, limpa e segura de configurar Python no Raspberry Pi OS.
+
+A ideia principal é utilizar **ambientes virtuais** (`venv`) para instalar bibliotecas Python sem alterar o Python usado pelo sistema operativo.
+
+---
+
+## 1. Verificar se o Python está instalado
+
+No terminal, executar:
+
+```bash
+python3 --version
+pip3 --version
+```
+
+Se aparecer a versão do Python, por exemplo `Python 3.x.x`, está tudo pronto para avançar.
+
+---
+
+## 2. Atualizar o sistema
+
+```bash
+sudo apt update
+sudo apt full-upgrade -y
+```
+
+---
+
+## 3. Instalar ferramentas essenciais
+
+```bash
+sudo apt install -y python3 python3-pip python3-venv python3-full git build-essential
+```
+
+Estes pacotes instalam ou garantem a presença de:
+
+- `python3` — linguagem Python
+- `python3-pip` — gestor de bibliotecas Python
+- `python3-venv` — criação de ambientes virtuais
+- `python3-full` — instalação Python mais completa
+- `git` — ferramenta para descarregar e gerir projectos
+- `build-essential` — ferramentas necessárias para compilar algumas bibliotecas
+
+---
+
+## 4. Criar uma pasta para projectos Python
+
+```bash
+mkdir -p ~/Projetos/python
+cd ~/Projetos/python
+```
+
+---
+
+## 5. Criar um novo projecto
+
+Neste exemplo, será criado um projecto chamado `teste_python`.
+
+```bash
+mkdir teste_python
+cd teste_python
+```
+
+---
+
+## 6. Criar um ambiente virtual
+
+```bash
+python3 -m venv .venv
+```
+
+O ambiente virtual fica guardado na pasta `.venv` dentro do projecto.
+
+---
+
+## 7. Activar o ambiente virtual
+
+```bash
+source .venv/bin/activate
+```
+
+Depois de activo, deverá aparecer `(.venv)` no início da linha de comandos.
+
+Exemplo:
+
+```bash
+(.venv) pi@raspberrypi:~/Projetos/python/teste_python $
+```
+
+---
+
+## 8. Actualizar o pip dentro do ambiente virtual
+
+```bash
+python -m pip install --upgrade pip setuptools wheel
+```
+
+---
+
+## 9. Instalar bibliotecas Python
+
+Com o ambiente virtual activo, podem ser instaladas bibliotecas apenas para este projecto.
+
+Exemplo:
+
+```bash
+pip install requests flask numpy
+```
+
+---
+
+## 10. Criar um ficheiro Python
+
+```bash
+nano app.py
+```
+
+Colocar o seguinte conteúdo no ficheiro:
+
+```python
+print("Olá Raspberry Pi!")
+```
+
+Guardar no `nano`:
+
+```text
+CTRL + O
+Enter
+CTRL + X
+```
+
+---
+
+## 11. Executar o programa
+
+```bash
+python app.py
+```
+
+Resultado esperado:
+
+```text
+Olá Raspberry Pi!
+```
+
+---
+
+## 12. Desactivar o ambiente virtual
+
+Quando terminares o trabalho no projecto:
+
+```bash
+deactivate
+```
+
+---
+
+## 13. Voltar a usar o projecto mais tarde
+
+Sempre que quiseres voltar a trabalhar neste projecto, deves entrar na pasta e activar novamente o ambiente virtual:
+
+```bash
+cd ~/Projetos/python/teste_python
+source .venv/bin/activate
+python app.py
+```
+
+---
+
+## Nota importante
+
+Evita instalar bibliotecas Python com:
+
+```bash
+sudo pip install nome_da_biblioteca
+```
+
+Essa prática pode causar conflitos com o Python usado pelo sistema operativo.
+
+A forma recomendada é criar um ambiente virtual por projecto:
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install nome_da_biblioteca
+```
+
+---
+
+## Resumo dos comandos principais
+
+```bash
+sudo apt update
+sudo apt full-upgrade -y
+
+sudo apt install -y python3 python3-pip python3-venv python3-full git build-essential
+
+mkdir -p ~/Projetos/python
+cd ~/Projetos/python
+
+mkdir teste_python
+cd teste_python
+
+python3 -m venv .venv
+source .venv/bin/activate
+
+python -m pip install --upgrade pip setuptools wheel
+
+nano app.py
+python app.py
+```
+
+---
+
+## Conclusão
+
+Com esta configuração, cada projecto Python fica isolado no seu próprio ambiente virtual.
+
+Isto permite instalar bibliotecas diferentes para projectos diferentes, evitar conflitos com o sistema operativo e manter o Raspberry Pi organizado para projectos de eletrónica, automação, sensores, aplicações web ou inteligência artificial.
